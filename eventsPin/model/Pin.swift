@@ -41,6 +41,10 @@ class Pin {
             
             self.tag = tags.first
             
+            if self.tag?.characters.first != "#"{
+                self.tag?.characters.removeFirst()
+            }
+            
             if tags.count > 1 {
                 
                 tags.removeFirst()
