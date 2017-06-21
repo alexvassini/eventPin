@@ -18,5 +18,19 @@ class Category {
     var inspiration: [Pin] = []
     
     
+    func addPin (_ pin:Pin) {
+        
+        if pin.isDecided {
+            
+            self.decided.append(pin)
+            
+        }
+            
+        else {
+            self.inspiration.append(pin)
+            
+        }
+        self.count+=1
+    }
     
 }

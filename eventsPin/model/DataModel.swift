@@ -31,4 +31,26 @@ class DataModel {
         
     }
     
+    func addPin(_ pin: Pin) {
+        
+        for category in categories {
+            
+            if category.tag == pin.tag{
+                
+               category.addPin(pin)
+                return
+            }
+            
+        }
+        
+        var category = Category()
+        
+        category.tag = pin.tag!
+        category.addPin(pin)
+        
+        self.categories.append(category)
+
+        
+    }
+    
 }

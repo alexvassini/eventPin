@@ -21,7 +21,7 @@ class Pin {
         didSet{
             //Funçao magica que separa TAG e Subtag do description
             
-            
+            tagExtractor(description: description!)
             
         }
     }
@@ -30,16 +30,23 @@ class Pin {
     private func tagExtractor(description: String) {
         
         // Localizar todas as sub strings que começam com '#'
-        //  A primeira sera a TAG
+        // A primeira sera a TAG
         // As demais SubTags
         // Usar REGEX 
         
-         let tags = matches(for: "(\\s|^)#[^\\s]+", in: description)
+         var tags = matches(for: "(\\s|^)#[^\\s]+", in: description)
         
         
         if tags.first != nil {
             
             self.tag = tags.first
+            
+            if tags.count > 1 {
+                
+                tags.removeFirst()
+                
+                self.subTags = tags
+            }
             
         }
             
