@@ -23,6 +23,12 @@ class DataModel {
         
     }
     
-    
+    func fakeDataGeneration () -> [Category] {
+        
+        var categories: [Category] = []
+        
+        return categories
+        
+    }
     
 }

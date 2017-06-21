@@ -76,6 +76,7 @@
 		5E0BC3A51EF9A607009573E1 /* eventsPin */ = {
 			isa = PBXGroup;
 			children = (
+				5ED4C2DC1EF9CF9A008C9B04 /* FakeImages */,
 				5E0BC3B81EF9AAF5009573E1 /* model */,
 				5E0BC3A61EF9A607009573E1 /* AppDelegate.swift */,
 				5E0BC3A81EF9A607009573E1 /* ViewController.swift */,
@@ -95,6 +96,13 @@
 				5E0BC3BD1EF9ABB8009573E1 /* DataModel.swift */,
 			);
 			name = model;
+			sourceTree = "<group>";
+		};
+		5ED4C2DC1EF9CF9A008C9B04 /* FakeImages */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = FakeImages;
 			sourceTree = "<group>";
 		};
 		7BD39E2C23A11EAEA7F7762D /* Frameworks */ = {
