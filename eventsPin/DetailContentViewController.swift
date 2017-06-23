@@ -8,10 +8,22 @@
 
 import UIKit
 
-class DetailContentViewController: UIViewController {
-
+class DetailContentViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    var pinList: [Pin] = [] {
+        didSet{
+            self.collectionView?.reloadData()
+        }
+    }
+    
+    @IBOutlet weak var collectionView: UICollectionView?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        collectionView?.delegate = self
+        collectionView?.dataSource = self
+        
 
         // Do any additional setup after loading the view.
     }
@@ -21,6 +33,26 @@ class DetailContentViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        return pinList.count
+    
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "pinCollectionViewCell", for: indexPath) as! PinCollectionViewCell
+    
+        let pin = pinList[indexPath.row]
+        
+        cell.pinImage.image = pin.image
+        cell.pinDescription.text = pin.description
+        
+        return cell
+    }
 
     /*
     // MARK: - Navigation

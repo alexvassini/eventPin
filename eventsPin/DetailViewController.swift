@@ -16,6 +16,8 @@ class DetailViewController: UIViewController , CategorySelectionDelegate, UIPage
     var inspirationPage: DetailContentViewController?
     
     var category : Category?
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +51,9 @@ class DetailViewController: UIViewController , CategorySelectionDelegate, UIPage
         print(category.tag)
         
         self.category = category
+        
+        decidedPage?.pinList = category.decided
+        inspirationPage?.pinList = category.inspiration
         
     }
     
