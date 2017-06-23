@@ -15,6 +15,7 @@
 		5E0BC3BA1EF9AB4E009573E1 /* Pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0BC3B91EF9AB4E009573E1 /* Pin.swift */; };
 		5E0BC3BC1EF9ABA2009573E1 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0BC3BB1EF9ABA2009573E1 /* Category.swift */; };
 		5E0BC3BE1EF9ABB8009573E1 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0BC3BD1EF9ABB8009573E1 /* DataModel.swift */; };
+		5EBB512E1EFDB4030085E2BC /* DetailContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBB512D1EFDB4030085E2BC /* DetailContentViewController.swift */; };
 		5ED4C34F1EFB0BF8008C9B04 /* cake1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5ED4C3441EFB0BF8008C9B04 /* cake1.jpg */; };
 		5ED4C3501EFB0BF8008C9B04 /* cake2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5ED4C3451EFB0BF8008C9B04 /* cake2.jpg */; };
 		5ED4C3511EFB0BF8008C9B04 /* cake3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5ED4C3461EFB0BF8008C9B04 /* cake3.jpg */; };
@@ -46,6 +47,7 @@
 		5E0BC3B91EF9AB4E009573E1 /* Pin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Pin.swift; path = model/Pin.swift; sourceTree = "<group>"; };
 		5E0BC3BB1EF9ABA2009573E1 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Category.swift; path = model/Category.swift; sourceTree = "<group>"; };
 		5E0BC3BD1EF9ABB8009573E1 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataModel.swift; path = model/DataModel.swift; sourceTree = "<group>"; };
+		5EBB512D1EFDB4030085E2BC /* DetailContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailContentViewController.swift; sourceTree = "<group>"; };
 		5ED4C3441EFB0BF8008C9B04 /* cake1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cake1.jpg; sourceTree = "<group>"; };
 		5ED4C3451EFB0BF8008C9B04 /* cake2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cake2.jpg; sourceTree = "<group>"; };
 		5ED4C3461EFB0BF8008C9B04 /* cake3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cake3.jpg; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				5ED4C35C1EFB2C61008C9B04 /* MasterTableViewController.swift */,
 				5ED4C35E1EFB35E3008C9B04 /* CategoryViewCell.swift */,
 				5ED4C3651EFCAF0D008C9B04 /* DetailViewController.swift */,
+				5EBB512D1EFDB4030085E2BC /* DetailContentViewController.swift */,
 			);
 			path = eventsPin;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 				5ED4C35D1EFB2C61008C9B04 /* MasterTableViewController.swift in Sources */,
 				5E0BC3BA1EF9AB4E009573E1 /* Pin.swift in Sources */,
 				5E0BC3A91EF9A607009573E1 /* ViewController.swift in Sources */,
+				5EBB512E1EFDB4030085E2BC /* DetailContentViewController.swift in Sources */,
 				5E0BC3A71EF9A607009573E1 /* AppDelegate.swift in Sources */,
 				5E0BC3BC1EF9ABA2009573E1 /* Category.swift in Sources */,
 				5ED4C35F1EFB35E3008C9B04 /* CategoryViewCell.swift in Sources */,
