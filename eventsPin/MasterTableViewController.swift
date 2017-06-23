@@ -8,23 +8,25 @@
 
 import UIKit
 
+protocol CategorySelectionDelegate {
+    
+    func categorySelected(_ category:Category)
+    
+}
+
 class MasterTableViewController: UITableViewController {
     
     
     var categories : [Category] = []
     
-
+    var delegate:CategorySelectionDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         categories = DataModel.shared.categories
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-    }
+        }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -48,7 +50,7 @@ class MasterTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "categoryCell", for: indexPath) as! CategoryViewCell
 
-        var category = categories[indexPath.row]
+        let category = categories[indexPath.row]
         
         cell.tagLabel.text = category.tag
         cell.counterLabel.text = String(category.count)
@@ -57,6 +59,12 @@ class MasterTableViewController: UITableViewController {
     }
     
 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let category = categories[indexPath.row]
+        
+        delegate?.categorySelected(category)
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

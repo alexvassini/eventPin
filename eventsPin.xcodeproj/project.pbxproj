@@ -28,6 +28,8 @@
 		5ED4C3591EFB0BF8008C9B04 /* portaGuardanapo3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5ED4C34E1EFB0BF8008C9B04 /* portaGuardanapo3.jpg */; };
 		5ED4C35D1EFB2C61008C9B04 /* MasterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED4C35C1EFB2C61008C9B04 /* MasterTableViewController.swift */; };
 		5ED4C35F1EFB35E3008C9B04 /* CategoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED4C35E1EFB35E3008C9B04 /* CategoryViewCell.swift */; };
+		5ED4C3661EFCAF0D008C9B04 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED4C3651EFCAF0D008C9B04 /* DetailViewController.swift */; };
+		5ED4C3681EFCAFA8008C9B04 /* UISplitViewController+ViewControllerAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED4C3671EFCAFA8008C9B04 /* UISplitViewController+ViewControllerAccess.swift */; };
 		92C004CA562EB17F90E821F4 /* Pods_eventsPin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F048238C751BC79F2D594F7 /* Pods_eventsPin.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +59,8 @@
 		5ED4C34E1EFB0BF8008C9B04 /* portaGuardanapo3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = portaGuardanapo3.jpg; sourceTree = "<group>"; };
 		5ED4C35C1EFB2C61008C9B04 /* MasterTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterTableViewController.swift; sourceTree = "<group>"; };
 		5ED4C35E1EFB35E3008C9B04 /* CategoryViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewCell.swift; sourceTree = "<group>"; };
+		5ED4C3651EFCAF0D008C9B04 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		5ED4C3671EFCAFA8008C9B04 /* UISplitViewController+ViewControllerAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UISplitViewController+ViewControllerAccess.swift"; path = "Utils/UISplitViewController+ViewControllerAccess.swift"; sourceTree = "<group>"; };
 		6F048238C751BC79F2D594F7 /* Pods_eventsPin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_eventsPin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -102,6 +106,7 @@
 		5E0BC3A51EF9A607009573E1 /* eventsPin */ = {
 			isa = PBXGroup;
 			children = (
+				5ED4C3691EFCAFB9008C9B04 /* Util */,
 				5ED4C3431EFB0BE3008C9B04 /* images */,
 				5ED4C2DC1EF9CF9A008C9B04 /* FakeImages */,
 				5E0BC3B81EF9AAF5009573E1 /* model */,
@@ -113,6 +118,7 @@
 				5E0BC3B21EF9A607009573E1 /* Info.plist */,
 				5ED4C35C1EFB2C61008C9B04 /* MasterTableViewController.swift */,
 				5ED4C35E1EFB35E3008C9B04 /* CategoryViewCell.swift */,
+				5ED4C3651EFCAF0D008C9B04 /* DetailViewController.swift */,
 			);
 			path = eventsPin;
 			sourceTree = "<group>";
@@ -150,6 +156,14 @@
 				5ED4C34E1EFB0BF8008C9B04 /* portaGuardanapo3.jpg */,
 			);
 			name = images;
+			sourceTree = "<group>";
+		};
+		5ED4C3691EFCAFB9008C9B04 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				5ED4C3671EFCAFA8008C9B04 /* UISplitViewController+ViewControllerAccess.swift */,
+			);
+			name = Util;
 			sourceTree = "<group>";
 		};
 		7BD39E2C23A11EAEA7F7762D /* Frameworks */ = {
@@ -296,12 +310,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E0BC3BE1EF9ABB8009573E1 /* DataModel.swift in Sources */,
+				5ED4C3681EFCAFA8008C9B04 /* UISplitViewController+ViewControllerAccess.swift in Sources */,
 				5ED4C35D1EFB2C61008C9B04 /* MasterTableViewController.swift in Sources */,
 				5E0BC3BA1EF9AB4E009573E1 /* Pin.swift in Sources */,
 				5E0BC3A91EF9A607009573E1 /* ViewController.swift in Sources */,
 				5E0BC3A71EF9A607009573E1 /* AppDelegate.swift in Sources */,
 				5E0BC3BC1EF9ABA2009573E1 /* Category.swift in Sources */,
 				5ED4C35F1EFB35E3008C9B04 /* CategoryViewCell.swift in Sources */,
+				5ED4C3661EFCAF0D008C9B04 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
