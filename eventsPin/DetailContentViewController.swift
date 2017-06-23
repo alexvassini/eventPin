@@ -8,13 +8,18 @@
 
 import UIKit
 
-class DetailContentViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class DetailContentViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     var pinList: [Pin] = [] {
         didSet{
             self.collectionView?.reloadData()
         }
     }
+    
+    let margin:CGFloat = 10.0
+    let numberOfColumns:CGFloat = 3.0
+    
+    @IBOutlet var collectionMarginConstraints: [NSLayoutConstraint]!
     
     @IBOutlet weak var collectionView: UICollectionView?
     
@@ -24,6 +29,10 @@ class DetailContentViewController: UIViewController, UICollectionViewDelegate, U
         collectionView?.delegate = self
         collectionView?.dataSource = self
         
+        for constrain in collectionMarginConstraints {
+            
+            constrain.constant = margin
+        }
 
         // Do any additional setup after loading the view.
     }
@@ -32,6 +41,7 @@ class DetailContentViewController: UIViewController, UICollectionViewDelegate, U
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -54,6 +64,21 @@ class DetailContentViewController: UIViewController, UICollectionViewDelegate, U
         return cell
     }
 
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let viewWidth = self.view.frame.width
+        
+        var size:CGSize = CGSize(width: 200.0, height: 325.0)
+        
+        size.width = (viewWidth - (margin * (numberOfColumns+1))) / numberOfColumns
+        
+        
+        return size
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return margin
+    }
     /*
     // MARK: - Navigation
 

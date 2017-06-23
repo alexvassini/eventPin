@@ -59,17 +59,32 @@ class DataModel {
         
         let pin2 = Pin()
         pin2.image = #imageLiteral(resourceName: "cake2.jpg")
-        pin2.isDecided = false
+        pin2.isDecided = true
         pin2.description = "Almost Naked #cake"
         
         addPin(pin2)
 
         let pin3 = Pin()
         pin3.image = #imageLiteral(resourceName: "cake3.jpg")
-        pin3.isDecided = false
+        pin3.isDecided = true
         pin3.description = "NOT Naked #cake #topper #corDeAline"
         
         addPin(pin3)
+        
+        let pin13 = Pin()
+        pin13.image = #imageLiteral(resourceName: "cake2.jpg")
+        pin13.isDecided = true
+        pin13.description = "Almost Diferent Naked #cake"
+        
+        addPin(pin13)
+        
+        let pin12 = Pin()
+        pin12.image = #imageLiteral(resourceName: "cake3.jpg")
+        pin12.isDecided = true
+        pin12.description = "More NOT Naked #cake #topper #corDeAline"
+        
+        addPin(pin12)
+
         
         let pin4 = Pin()
         pin4.image = #imageLiteral(resourceName: "colorPallette1.jpg")

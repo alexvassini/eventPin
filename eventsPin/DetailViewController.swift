@@ -28,7 +28,7 @@ class DetailViewController: UIViewController , CategorySelectionDelegate, UIPage
         
         decidedPage = self.storyboard?.instantiateViewController(withIdentifier: "detailContentViewController") as? DetailContentViewController
         
-        decidedPage?.view.backgroundColor = .red
+      
         
         inspirationPage = self.storyboard?.instantiateViewController(withIdentifier: "detailContentViewController") as? DetailContentViewController
         

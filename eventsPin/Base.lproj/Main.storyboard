@@ -31,7 +31,6 @@
                             </segmentedControl>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xe5-4P-c0b">
                                 <rect key="frame" x="0.0" y="124" width="703" height="644"/>
-                                <color key="backgroundColor" red="0.04394221305847168" green="0.96611469984054565" blue="0.020261626690626144" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <segue destination="vhC-zR-rFA" kind="embed" identifier="pageControllerSegue" id="bII-XC-0vW"/>
                                 </connections>
@@ -66,7 +65,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dbL-de-YRu">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <rect key="frame" x="8" y="0.0" width="1008" height="768"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="16" minimumInteritemSpacing="16" id="D5E-6z-tBI">
                                     <size key="itemSize" width="250" height="325"/>
@@ -82,7 +81,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="250" height="325"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rvN-9b-Xyv">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rvN-9b-Xyv">
                                                     <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="rvN-9b-Xyv" secondAttribute="height" multiplier="1:1" id="Ows-ba-fiU"/>
@@ -127,14 +126,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="dbL-de-YRu" firstAttribute="top" secondItem="iCO-W0-aQ1" secondAttribute="top" id="9kl-2r-GfG"/>
+                            <constraint firstItem="3On-XF-6Ej" firstAttribute="top" secondItem="dbL-de-YRu" secondAttribute="bottom" id="GCz-ES-q83"/>
                             <constraint firstItem="dbL-de-YRu" firstAttribute="centerX" secondItem="iCO-W0-aQ1" secondAttribute="centerX" id="Wc8-YI-i7i"/>
                             <constraint firstItem="dbL-de-YRu" firstAttribute="centerY" secondItem="iCO-W0-aQ1" secondAttribute="centerY" id="bE5-kA-6Zd"/>
-                            <constraint firstItem="dbL-de-YRu" firstAttribute="width" secondItem="iCO-W0-aQ1" secondAttribute="width" id="eQS-AK-dPb"/>
-                            <constraint firstItem="dbL-de-YRu" firstAttribute="height" secondItem="iCO-W0-aQ1" secondAttribute="height" id="xcj-wL-QUz"/>
+                            <constraint firstAttribute="trailing" secondItem="dbL-de-YRu" secondAttribute="trailing" constant="8" id="foT-NP-o4g"/>
+                            <constraint firstItem="dbL-de-YRu" firstAttribute="leading" secondItem="iCO-W0-aQ1" secondAttribute="leading" constant="8" id="tXF-uC-0p7"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="dbL-de-YRu" id="Zc8-gf-Tex"/>
+                        <outletCollection property="collectionMarginConstraints" destination="foT-NP-o4g" collectionClass="NSMutableArray" id="I1Q-SZ-Hby"/>
+                        <outletCollection property="collectionMarginConstraints" destination="tXF-uC-0p7" collectionClass="NSMutableArray" id="Kyu-lX-zcf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cGE-ae-yy9" userLabel="First Responder" sceneMemberID="firstResponder"/>
