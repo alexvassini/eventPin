@@ -20,11 +20,21 @@ class CategoryViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        counterLabel.backgroundColor = DataModel.shared.settings.secondaryColor
         // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+        //super.setSelected(selected, animated: animated)
+        
+        if selected {
+            self.backgroundColor = Constants.cellSelectedColor
+        }
+        else{
+            self.backgroundColor = Constants.generalBackgroundColor
+        }
+        
 
         // Configure the view for the selected state
     }

@@ -33,7 +33,8 @@ class DetailContentViewController: UIViewController, UICollectionViewDelegate, U
             
             constrain.constant = margin
         }
-
+        
+        
         // Do any additional setup after loading the view.
     }
 

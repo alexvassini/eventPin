@@ -38,6 +38,9 @@ class DetailViewController: UIViewController , CategorySelectionDelegate, UIPage
         self.pageViewController?.delegate = self
         self.pageViewController?.dataSource = self
         
+        self.navigationController?.navigationBar.barTintColor = DataModel.shared.settings.primaryColor
+        self.navigationController?.navigationBar.isTranslucent = false
+        
         // Do any additional setup after loading the view.
     }
 

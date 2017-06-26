@@ -13,11 +13,16 @@ class Settings {
     
     var primaryColor: UIColor!
     var secondaryColor: UIColor!
+    var cellSelectedColor: UIColor!
+    var generalBackgroundColor: UIColor!
     
     init() {
         
         primaryColor = Constants.primaryColor
         secondaryColor = Constants.secondaryColor
+        
+        cellSelectedColor = Constants.cellSelectedColor
+        generalBackgroundColor = Constants.generalBackgroundColor
         
     }
     

@@ -26,6 +26,13 @@ class MasterTableViewController: UITableViewController {
         
         categories = DataModel.shared.categories
         
+        self.navigationController?.navigationBar.barTintColor = DataModel.shared.settings.primaryColor
+        self.navigationController?.navigationBar.isTranslucent = false
+        
+        UIApplication.shared.statusBarStyle = .lightContent
+        
+        self.view.backgroundColor = Constants.generalBackgroundColor
+        
         }
 
     override func didReceiveMemoryWarning() {
