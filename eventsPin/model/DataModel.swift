@@ -16,6 +16,8 @@ class DataModel {
     
     var categories: [Category] = []
     
+    let settings = Settings()
+    
     fileprivate init() {
         
         

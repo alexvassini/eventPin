@@ -15,6 +15,8 @@ class CategoryViewCell: UITableViewCell {
     @IBOutlet weak var tagLabel: UILabel!
     
     @IBOutlet weak var counterLabel: UILabel!
+    
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()

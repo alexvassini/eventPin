@@ -16,7 +16,7 @@ class DetailContentViewController: UIViewController, UICollectionViewDelegate, U
         }
     }
     
-    let margin:CGFloat = 10.0
+    let margin:CGFloat = 8.0
     let numberOfColumns:CGFloat = 3.0
     
     @IBOutlet var collectionMarginConstraints: [NSLayoutConstraint]!
