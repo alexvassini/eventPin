@@ -17,6 +17,7 @@ class DetailViewController: UIViewController , CategorySelectionDelegate, UIPage
     
     var category : Category?
     
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
     
 
     override func viewDidLoad() {
@@ -41,6 +42,9 @@ class DetailViewController: UIViewController , CategorySelectionDelegate, UIPage
         self.navigationController?.navigationBar.barTintColor = DataModel.shared.settings.primaryColor
         self.navigationController?.navigationBar.isTranslucent = false
         
+        segmentedControl.tintColor = DataModel.shared.settings.secondaryColor
+        
+        
         // Do any additional setup after loading the view.
     }
 
@@ -48,6 +52,21 @@ class DetailViewController: UIViewController , CategorySelectionDelegate, UIPage
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func buttonValueChanged(_ sender: Any) {
+        
+        if segmentedControl.selectedSegmentIndex == 0 {
+            pageViewController?.setViewControllers([decidedPage!], direction: .forward, animated: true, completion: nil)
+            print(segmentedControl.selectedSegmentIndex)
+        }
+        
+        else {
+            pageViewController?.setViewControllers([inspirationPage!], direction: .reverse, animated: true, completion: nil)
+        print(segmentedControl.selectedSegmentIndex)
+        }
+        
+    }
+    
     
     func categorySelected(_ category: Category) {
         
@@ -63,6 +82,7 @@ class DetailViewController: UIViewController , CategorySelectionDelegate, UIPage
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         
         if viewController == inspirationPage {
+            
             return decidedPage
         }
         
@@ -83,6 +103,24 @@ class DetailViewController: UIViewController , CategorySelectionDelegate, UIPage
         }
     }
     
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        
+        if !completed {
+            return
+        }
+        
+        if previousViewControllers.first == decidedPage {
+        segmentedControl.selectedSegmentIndex = 1
+        }
+        
+        else if previousViewControllers.first == inspirationPage {
+            segmentedControl.selectedSegmentIndex = 0
+        }
+        
+        
+        
+    }
+   
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation

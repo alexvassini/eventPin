@@ -33,7 +33,17 @@ class MasterTableViewController: UITableViewController {
         
         self.view.backgroundColor = Constants.generalBackgroundColor
         
+       
+        
         }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        tableView.selectRow(at: IndexPath(row: 0, section: 0 ), animated: true, scrollPosition: .top)
+        let category = categories.first
+        
+        delegate?.categorySelected(category!)
+
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
