@@ -14,8 +14,8 @@ class Pin {
     var image : UIImage?
     
     var isDecided: Bool = false
-    var tag : String?
-    var subTags : [String]?
+    //var tag : String?
+    var tags : [String] = []
     
     var description : String? {
         didSet{
@@ -33,32 +33,20 @@ class Pin {
         // A primeira sera a TAG
         // As demais SubTags
         // Usar REGEX 
+        self.tags.removeAll()
         
-         var tags = matches(for: "(\\s|^)#[^\\s]+", in: description)
+        self.tags = matches(for: "(\\s|^)#[^\\s]+", in: description)
         
-        
-        if tags.first != nil {
+        if self.tags.first == nil {
             
-            self.tag = tags.first
+            let fillTag = "#other"
             
-            if self.tag?.characters.first != "#"{
-                self.tag?.characters.removeFirst()
-            }
-            
-            if tags.count > 1 {
-                
-                tags.removeFirst()
-                
-                self.subTags = tags
-            }
+            self.tags.append(fillTag)
             
         }
             
-        else {
-            
-            self.tag = "#other"
-            
-        }
+        
+        
         
         
         
@@ -67,11 +55,24 @@ class Pin {
     
     private func matches(for regex: String, in text: String) -> [String] {
         
+        
+        
         do {
+            
             let regex = try NSRegularExpression(pattern: regex)
             let nsString = text as NSString
             let results = regex.matches(in: text, range: NSRange(location: 0, length: nsString.length))
-            return results.map { nsString.substring(with: $0.range)}
+            let tags = results.map { nsString.substring(with: $0.range)}
+            
+            for var tag in tags {
+                
+                if tag.characters.first == " " {
+                    
+                    tag.characters.removeFirst()
+                }
+            }
+            
+            return tags
         } catch let error {
             print("invalid regex: \(error.localizedDescription)")
             return []

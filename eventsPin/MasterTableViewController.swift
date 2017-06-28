@@ -28,6 +28,8 @@ class MasterTableViewController: UITableViewController {
         
         self.navigationController?.navigationBar.barTintColor = DataModel.shared.settings.primaryColor
         self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.navigationBar.titleTextAttributes =
+            [NSForegroundColorAttributeName: UIColor.white]
         
         UIApplication.shared.statusBarStyle = .lightContent
         

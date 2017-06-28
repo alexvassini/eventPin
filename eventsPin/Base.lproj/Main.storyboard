@@ -33,7 +33,7 @@
                                 </connections>
                             </segmentedControl>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xe5-4P-c0b">
-                                <rect key="frame" x="-0.5" y="124" width="702.5" height="644"/>
+                                <rect key="frame" x="0.0" y="124" width="703" height="644"/>
                                 <connections>
                                     <segue destination="vhC-zR-rFA" kind="embed" identifier="pageControllerSegue" id="bII-XC-0vW"/>
                                 </connections>
@@ -177,7 +177,7 @@
             </objects>
             <point key="canvasLocation" x="576.5625" y="1387.5"/>
         </scene>
-        <!--Master Table View Controller-->
+        <!--Polenta & Salsicha-->
         <scene sceneID="bOG-mB-mss">
             <objects>
                 <tableViewController clearsSelectionOnViewWillAppear="NO" id="K0l-5Q-PPb" customClass="MasterTableViewController" customModule="eventsPin" customModuleProvider="target" sceneMemberID="viewController">
@@ -244,7 +244,7 @@
                             <outlet property="delegate" destination="K0l-5Q-PPb" id="SAF-x8-0yr"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="K6s-Rc-ufk"/>
+                    <navigationItem key="navigationItem" title="Polenta &amp; Salsicha" id="K6s-Rc-ufk"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S8d-aE-Peg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
