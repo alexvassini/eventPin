@@ -46,7 +46,20 @@ class Pin {
         }
             
         
-        
+        else {
+            for i in 0..<self.tags.count {
+                
+                var tag = self.tags[i]
+                
+                if tag.characters.first == " " {
+                    
+                    tag.characters.removeFirst()
+                    
+                    self.tags[i] = tag
+                }
+            }
+
+        }
         
         
         
@@ -62,17 +75,8 @@ class Pin {
             let regex = try NSRegularExpression(pattern: regex)
             let nsString = text as NSString
             let results = regex.matches(in: text, range: NSRange(location: 0, length: nsString.length))
-            let tags = results.map { nsString.substring(with: $0.range)}
             
-            for var tag in tags {
-                
-                if tag.characters.first == " " {
-                    
-                    tag.characters.removeFirst()
-                }
-            }
-            
-            return tags
+            return results.map { nsString.substring(with: $0.range)}
         } catch let error {
             print("invalid regex: \(error.localizedDescription)")
             return []
