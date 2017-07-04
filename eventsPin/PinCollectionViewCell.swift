@@ -18,6 +18,7 @@ class PinCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var cardView: UIView!
    
+    @IBOutlet weak var button: UIButton!
     
     override func awakeFromNib() {
         

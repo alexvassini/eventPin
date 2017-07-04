@@ -56,12 +56,12 @@ class DetailViewController: UIViewController , CategorySelectionDelegate, UIPage
     @IBAction func buttonValueChanged(_ sender: Any) {
         
         if segmentedControl.selectedSegmentIndex == 0 {
-            pageViewController?.setViewControllers([decidedPage!], direction: .forward, animated: true, completion: nil)
+            pageViewController?.setViewControllers([decidedPage!], direction: .reverse, animated: true, completion: nil)
             print(segmentedControl.selectedSegmentIndex)
         }
         
         else {
-            pageViewController?.setViewControllers([inspirationPage!], direction: .reverse, animated: true, completion: nil)
+            pageViewController?.setViewControllers([inspirationPage!], direction: .forward, animated: true, completion: nil)
         print(segmentedControl.selectedSegmentIndex)
         }
         

@@ -1,3 +1,14 @@
-PODFILE CHECKSUM: 3b5360114e719c16100c859a59e1224c19620395
+PODS:
+  - CHTCollectionViewWaterfallLayout (0.9.5):
+    - CHTCollectionViewWaterfallLayout/ObjC (= 0.9.5)
+  - CHTCollectionViewWaterfallLayout/ObjC (0.9.5)
+
+DEPENDENCIES:
+  - CHTCollectionViewWaterfallLayout
+
+SPEC CHECKSUMS:
+  CHTCollectionViewWaterfallLayout: 775ff73f48cfc13859b62d8bceb96e772e4a0318
+
+PODFILE CHECKSUM: b5ea23f0a8bacd28037e061499bb63005d3d2729
 
 COCOAPODS: 1.2.1

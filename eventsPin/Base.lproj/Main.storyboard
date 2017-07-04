@@ -33,7 +33,7 @@
                                 </connections>
                             </segmentedControl>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xe5-4P-c0b">
-                                <rect key="frame" x="0.0" y="124" width="703" height="644"/>
+                                <rect key="frame" x="0.0" y="124" width="702.5" height="644"/>
                                 <connections>
                                     <segue destination="vhC-zR-rFA" kind="embed" identifier="pageControllerSegue" id="bII-XC-0vW"/>
                                 </connections>
@@ -56,7 +56,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jK1-wF-NBu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1303.125" y="676.5625"/>
+            <point key="canvasLocation" x="1984" y="610"/>
         </scene>
         <!--Detail Content View Controller-->
         <scene sceneID="GKO-HN-ZeU">
@@ -73,41 +73,36 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dbL-de-YRu">
                                 <rect key="frame" x="8" y="0.0" width="1008" height="768"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="16" minimumInteritemSpacing="16" id="D5E-6z-tBI">
-                                    <size key="itemSize" width="250" height="325"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
+                                <collectionViewLayout key="collectionViewLayout" id="lgO-0e-1dQ" customClass="CHTCollectionViewWaterfallLayout"/>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="pinCollectionViewCell" id="P4Q-3s-1CE" customClass="PinCollectionViewCell" customModule="eventsPin" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="250" height="325"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="218" height="306"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="250" height="325"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="218" height="306"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MbC-Cg-vXB" userLabel="ShadowView">
-                                                    <rect key="frame" x="2" y="0.0" width="246" height="321"/>
+                                                    <rect key="frame" x="2" y="0.0" width="214" height="302"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
                                                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="65d-Um-Grg" userLabel="contentView">
-                                                    <rect key="frame" x="2" y="0.0" width="246" height="321"/>
+                                                    <rect key="frame" x="2" y="0.0" width="214" height="302"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rvN-9b-Xyv">
-                                                            <rect key="frame" x="0.0" y="0.0" width="246.5" height="246.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="214.5" height="214.5"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="rvN-9b-Xyv" secondAttribute="height" multiplier="1:1" id="FMb-tx-ddl"/>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Manduma #pindureta quium dia nois paga. Si u mundo tá muito paradis? " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ndg-mW-TWY">
-                                                            <rect key="frame" x="6" y="254.5" width="246" height="31.5"/>
+                                                            <rect key="frame" x="6" y="222.5" width="214" height="47"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U2B-mp-Gfa">
-                                                            <rect key="frame" x="206" y="306" width="40" height="15"/>
+                                                            <rect key="frame" x="174" y="287" width="40" height="15"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="40" id="L5v-TN-tbd"/>
                                                                 <constraint firstAttribute="height" constant="15" id="Uyr-NB-o03"/>
@@ -147,7 +142,9 @@
                                             <constraint firstItem="MbC-Cg-vXB" firstAttribute="top" secondItem="P4Q-3s-1CE" secondAttribute="top" id="dyS-l0-PR8"/>
                                             <constraint firstItem="65d-Um-Grg" firstAttribute="top" secondItem="P4Q-3s-1CE" secondAttribute="top" id="xyU-fV-aXr"/>
                                         </constraints>
+                                        <size key="customSize" width="218" height="306"/>
                                         <connections>
+                                            <outlet property="button" destination="U2B-mp-Gfa" id="dW9-hJ-FIL"/>
                                             <outlet property="cardView" destination="65d-Um-Grg" id="rb5-hm-LA9"/>
                                             <outlet property="pinDescription" destination="ndg-mW-TWY" id="Jcs-zc-n7i"/>
                                             <outlet property="pinImage" destination="rvN-9b-Xyv" id="aNa-KT-GYH"/>
@@ -175,7 +172,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cGE-ae-yy9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="576.5625" y="1387.5"/>
+            <point key="canvasLocation" x="579" y="1783"/>
         </scene>
         <!--Polenta & Salsicha-->
         <scene sceneID="bOG-mB-mss">
@@ -248,7 +245,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S8d-aE-Peg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1308.984375" y="29.6875"/>
+            <point key="canvasLocation" x="1922" y="-364"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="CPY-aV-hWF">
@@ -277,7 +274,7 @@
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1N4-xJ-zp0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-149" y="354"/>
+            <point key="canvasLocation" x="-890" y="294"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="DLa-h4-jLR">
@@ -285,7 +282,7 @@
                 <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="vhC-zR-rFA" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fkb-Jg-Y7B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1397" y="1456"/>
+            <point key="canvasLocation" x="2209" y="1607"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ozD-fR-gcc">

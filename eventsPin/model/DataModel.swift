@@ -84,7 +84,7 @@ class DataModel {
         let pin3 = Pin()
         pin3.image = #imageLiteral(resourceName: "cake3.jpg")
         pin3.isDecided = true
-        pin3.description = "NOT Naked #cake #topper #corDeAline"
+        pin3.description = "NOT Naked #cake #topper #corDeAline com um texto mais maior de grande pra eu ver se a logica de calcular o tamanho da label esta correta ou vou ter que ficar testando mais e mais e mais ate sair sangue dos meus dedos de tanto digitar"
         
         addPin(pin3)
         

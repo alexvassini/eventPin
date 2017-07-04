@@ -6,5 +6,7 @@ target 'eventsPin' do
   use_frameworks!
 
   # Pods for eventsPin
+  
+  pod 'CHTCollectionViewWaterfallLayout'
 
 end

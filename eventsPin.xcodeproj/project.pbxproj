@@ -202,6 +202,7 @@
 				5E0BC3A11EF9A607009573E1 /* Resources */,
 				034B2F3F7C8810DEF816FA4E /* [CP] Embed Pods Frameworks */,
 				59D3D0F7171497D99C6AB467 /* [CP] Copy Pods Resources */,
+				5E179FA11F0B3E0A00FB8BB8 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -316,6 +317,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-eventsPin/Pods-eventsPin-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		5E179FA11F0B3E0A00FB8BB8 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#TAGS\nTAGS=\"TODO:|FIXME:|WARNING:\"\nfind \"${SRCROOT}\" \\( -name \"*.h\" -or -name \"*.m\" -or -name \"*.swift\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($TAGS).*\\$\" | perl -p -e \"s/($TAGS)/ warning: \\$1/\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

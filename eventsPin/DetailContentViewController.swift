@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import CHTCollectionViewWaterfallLayout
 
-class DetailContentViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+
+class DetailContentViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, CHTCollectionViewDelegateWaterfallLayout{
     
     var pinList: [Pin] = [] {
         didSet{
@@ -23,6 +25,8 @@ class DetailContentViewController: UIViewController, UICollectionViewDelegate, U
     
     @IBOutlet weak var collectionView: UICollectionView?
     
+ 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,10 +38,21 @@ class DetailContentViewController: UIViewController, UICollectionViewDelegate, U
             constrain.constant = margin
         }
         
+        setupCollectionView()
         
         // Do any additional setup after loading the view.
     }
-
+    
+    func setupCollectionView(){
+        
+        let layout = CHTCollectionViewWaterfallLayout()
+        
+        layout.columnCount = Int(numberOfColumns)
+        
+        self.collectionView?.collectionViewLayout = layout
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -59,23 +74,37 @@ class DetailContentViewController: UIViewController, UICollectionViewDelegate, U
     
         let pin = pinList[indexPath.row]
         
+       
+        cell.button.tag = indexPath.row
+        cell.button.addTarget(self, action: #selector(self.detailEdit(_:)), for: .touchUpInside)
+        
+       
+        
         cell.pinImage.image = pin.image
         cell.pinDescription.text = pin.description
         
         return cell
     }
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    
+     func detailEdit(_ sender: UIButton){
         
-        let viewWidth = self.view.frame.width
+        print(sender.tag)
+        let alert = UIAlertController(title: "Titulo", message: "Mensagem", preferredStyle: .actionSheet)
         
-        var size:CGSize = CGSize(width: 200.0, height: 325.0)
-        
-        size.width = (viewWidth - (margin * (numberOfColumns+1))) / numberOfColumns
+         //TODO: Refatorar
         
         
-        return size
+        let indexPath = IndexPath(row: sender.tag, section:0)
+        let cell = collectionView!.cellForItem(at: indexPath) as! PinCollectionViewCell
+        
+        alert.popoverPresentationController?.sourceView = cell.view
+        alert.popoverPresentationController?.sourceRect = cell.button.frame
+        
+       
+        
+        self.present(alert, animated: true, completion: nil)
     }
+
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return margin
@@ -89,5 +118,40 @@ class DetailContentViewController: UIViewController, UICollectionViewDelegate, U
         // Pass the selected object to the new view controller.
     }
     */
+    
+    //** Size for the cells in the Waterfall Layout */
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        // create a cell size from the image size, and return the size
+       
+        var size:CGSize = CGSize(width: 200.0, height: 325.0)
+        
+        let viewWidth = self.view.frame.width
+        
+        let pin = self.pinList[indexPath.row]
+        
+        //let imageHeight = pin.image?.size.height
+        
+        let label = NSString(string: pin.description ?? "")
+        
+        size.width = (viewWidth - (margin * (numberOfColumns+1))) / numberOfColumns
+        
+        let titleHeight : CGFloat = label.boundingRect(with: CGSize(width: CGFloat(size.width-16), height: 400),
+                                                       options: NSStringDrawingOptions.usesLineFragmentOrigin,
+                                                       attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 13)],
+                                                       context: nil).height + 20
+        
+        print(titleHeight)
+        
+        size.height = titleHeight + size.width
+     
+        print(size.height)
+       
+        
+        //TODO: Acertar a altura da imagem.
+        
+        
+        return size
+
+    }
 
 }
