@@ -39,7 +39,9 @@ class CreateEditViewController: UIViewController {
         
         segmentedControl.tintColor = DataModel.shared.settings.secondaryColor
         
+        textField.backgroundColor = Constants.generalBackgroundColor
         
+        textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         // Do any additional setup after loading the view.
     }
 
@@ -52,6 +54,12 @@ class CreateEditViewController: UIViewController {
     @IBAction func createAndSavePins(_ sender: Any) {
         
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    
+    func textFieldDidChange(_ textField: UITextField) {
+        print("editando...")
     }
     
     /*

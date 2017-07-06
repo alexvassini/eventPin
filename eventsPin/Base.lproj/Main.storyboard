@@ -344,7 +344,7 @@
                                                     <action selector="createAndSavePins:" destination="Bnp-H3-MVO" eventType="touchUpInside" id="Juk-bN-EYw"/>
                                                 </connections>
                                             </button>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="use #hashtags to create #categories" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xb7-jd-CBo">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" placeholder="use #hashtags to create #categories" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xb7-jd-CBo">
                                                 <rect key="frame" x="10" y="234" width="412" height="150"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="150" id="ECC-eB-LWz"/>
