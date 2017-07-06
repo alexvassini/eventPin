@@ -33,7 +33,7 @@
                                 </connections>
                             </segmentedControl>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xe5-4P-c0b">
-                                <rect key="frame" x="0.0" y="124" width="702.5" height="644"/>
+                                <rect key="frame" x="0.0" y="124" width="703" height="644"/>
                                 <connections>
                                     <segue destination="vhC-zR-rFA" kind="embed" identifier="pageControllerSegue" id="bII-XC-0vW"/>
                                 </connections>
@@ -49,8 +49,15 @@
                             <constraint firstItem="xe5-4P-c0b" firstAttribute="width" secondItem="wCO-60-vFt" secondAttribute="width" id="u7x-aF-keV"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="SEW-1e-073"/>
+                    <navigationItem key="navigationItem" id="wmt-FS-4ql">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="KAu-L3-CDF">
+                            <connections>
+                                <action selector="addItem:" destination="Wkn-pj-mis" id="ezN-TO-cXm"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="addItemButton" destination="KAu-L3-CDF" id="1LI-ty-HXM"/>
                         <outlet property="segmentedControl" destination="702-sl-cQK" id="P9N-KH-v3R"/>
                     </connections>
                 </viewController>
@@ -90,13 +97,13 @@
                                                     <rect key="frame" x="2" y="0.0" width="214" height="302"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rvN-9b-Xyv">
-                                                            <rect key="frame" x="0.0" y="0.0" width="214.5" height="214.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="215" height="215"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="rvN-9b-Xyv" secondAttribute="height" multiplier="1:1" id="FMb-tx-ddl"/>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Manduma #pindureta quium dia nois paga. Si u mundo tá muito paradis? " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ndg-mW-TWY">
-                                                            <rect key="frame" x="6" y="222.5" width="214" height="47"/>
+                                                            <rect key="frame" x="6" y="223" width="214" height="47"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -198,7 +205,7 @@
                                             </constraints>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#convites" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a6Q-GY-wyy">
-                                            <rect key="frame" x="20" y="19" width="79" height="21.5"/>
+                                            <rect key="frame" x="20" y="19" width="79" height="22"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -276,13 +283,56 @@
             </objects>
             <point key="canvasLocation" x="-890" y="294"/>
         </scene>
+        <!--Create Edit View Controller-->
+        <scene sceneID="g29-tm-p4d">
+            <objects>
+                <viewController storyboardIdentifier="CreateAndEditVC" id="Bnp-H3-MVO" customClass="CreateEditViewController" customModule="eventsPin" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="v0z-R7-Y9Z"/>
+                        <viewControllerLayoutGuide type="bottom" id="S09-zQ-YWp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gXJ-Vm-CZR">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <visualEffectView opaque="NO" alpha="0.65000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z5o-IZ-cAJ">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="aZ8-cw-soP">
+                                    <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="dark"/>
+                            </visualEffectView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2tA-iF-caY" userLabel="contentView">
+                                <rect key="frame" x="90" y="80" width="844" height="608"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Z5o-IZ-cAJ" firstAttribute="top" secondItem="v0z-R7-Y9Z" secondAttribute="bottom" constant="-20" id="Iee-WB-Skq"/>
+                            <constraint firstItem="S09-zQ-YWp" firstAttribute="top" secondItem="Z5o-IZ-cAJ" secondAttribute="bottom" id="LmX-1o-54A"/>
+                            <constraint firstAttribute="trailing" secondItem="Z5o-IZ-cAJ" secondAttribute="trailing" id="Zxa-zG-gEi"/>
+                            <constraint firstItem="Z5o-IZ-cAJ" firstAttribute="leading" secondItem="gXJ-Vm-CZR" secondAttribute="leading" id="ycm-Wv-GQm"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="K3m-i9-YkH"/>
+                    <connections>
+                        <outlet property="contentUIView" destination="2tA-iF-caY" id="AgR-Gb-vkd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wwv-aJ-QEu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2693.5546875" y="608.59375"/>
+        </scene>
         <!--Page View Controller-->
         <scene sceneID="DLa-h4-jLR">
             <objects>
                 <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="vhC-zR-rFA" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fkb-Jg-Y7B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2209" y="1607"/>
+            <point key="canvasLocation" x="2932.91015625" y="1606.25"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ozD-fR-gcc">

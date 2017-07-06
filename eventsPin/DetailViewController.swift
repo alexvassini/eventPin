@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailViewController: UIViewController , CategorySelectionDelegate, UIPageViewControllerDelegate, UIPageViewControllerDataSource{
+class DetailViewController: UIViewController , CategorySelectionDelegate, UIPageViewControllerDelegate, UIPageViewControllerDataSource, UIPopoverPresentationControllerDelegate{
     
     var pageViewController: UIPageViewController?
     
@@ -19,6 +19,7 @@ class DetailViewController: UIViewController , CategorySelectionDelegate, UIPage
     
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
+    @IBOutlet weak var addItemButton: UIBarButtonItem!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -120,6 +121,18 @@ class DetailViewController: UIViewController , CategorySelectionDelegate, UIPage
         
         
     }
+    
+    
+    @IBAction func addItem(_ sender: Any) {
+        
+        let popoverContent = self.storyboard?.instantiateViewController(withIdentifier:"CreateAndEditVC" ) as! CreateEditViewController
+        
+        popoverContent.modalPresentationStyle = UIModalPresentationStyle.overFullScreen
+
+        self.present(popoverContent, animated: true, completion: nil)
+ 
+    }
+    
    
     // MARK: - Navigation
 
@@ -138,7 +151,4 @@ class DetailViewController: UIViewController , CategorySelectionDelegate, UIPage
         
     }
     
-    
-    
-
-}
+   }
