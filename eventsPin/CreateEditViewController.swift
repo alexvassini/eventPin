@@ -7,9 +7,16 @@
 //
 
 import UIKit
+import Photos
+import AVKit
+import DKImagePickerController
+import CHTCollectionViewWaterfallLayout
+
 
 class CreateEditViewController: UIViewController {
     
+    
+    @IBOutlet var backgroundView: UIView!
     
     @IBOutlet weak var contentUIView: UIView!
    
@@ -26,16 +33,29 @@ class CreateEditViewController: UIViewController {
     @IBOutlet weak var tagsView: UIView!
     
     
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    var assets: [DKAsset]?
+    
+    var dataSource = PhotosDataSource()
+    
+    let margin:CGFloat = 8.0
+    let numberOfColumns:CGFloat = 3.0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        contentUIView.layer.cornerRadius = 10
+        
+        setupCollectionView()
         
         photoView.backgroundColor = Constants.generalBackgroundColor
         
         navigationBar.barTintColor = DataModel.shared.settings.primaryColor
         navigationBar.titleTextAttributes =
             [NSForegroundColorAttributeName: UIColor.white]
+        
+        backgroundView.backgroundColor = DataModel.shared.settings.primaryColor
+
         
         segmentedControl.tintColor = DataModel.shared.settings.secondaryColor
         
@@ -51,6 +71,22 @@ class CreateEditViewController: UIViewController {
     }
     
     
+    func setupCollectionView(){
+        
+        let layout = CHTCollectionViewWaterfallLayout()
+        
+        layout.columnCount = Int(numberOfColumns)
+        
+        self.collectionView?.collectionViewLayout = layout
+        
+        collectionView.dataSource = dataSource
+        collectionView.delegate = dataSource
+        
+        
+        
+    }
+
+    
     @IBAction func createAndSavePins(_ sender: Any) {
         
         self.dismiss(animated: true, completion: nil)
@@ -62,6 +98,36 @@ class CreateEditViewController: UIViewController {
         print("editando...")
     }
     
+    @IBAction func addPhoto(_ sender: Any) {
+        
+        let pickerController = DKImagePickerController()
+        
+        
+        pickerController.assetType = .allPhotos
+        
+        pickerController.defaultSelectedAssets = self.dataSource.photoArray
+        
+        pickerController.didCancel = { ()
+            print("didCancel")
+        }
+        
+        pickerController.didSelectAssets = { [unowned self] (assets: [DKAsset]) in
+            print("didSelectAssets")
+            
+            self.dataSource.photoArray = assets
+            self.collectionView.reloadData()
+            
+        }
+        
+        if UI_USER_INTERFACE_IDIOM() == .pad {
+            pickerController.modalPresentationStyle = .formSheet
+        }
+        
+        self.present(pickerController, animated: true) {}
+
+        
+        
+    }
     /*
     // MARK: - Navigation
 

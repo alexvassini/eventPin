@@ -12,7 +12,7 @@ import UIKit
 class Pin {
     
     var image : UIImage?
-    
+    var size : CGSize?
     var isDecided: Bool = false
     //var tag : String?
     var tags : [String] = []

@@ -8,5 +8,8 @@ target 'eventsPin' do
   # Pods for eventsPin
   
   pod 'CHTCollectionViewWaterfallLayout'
+  
+  pod 'DKImagePickerController'
+	
 
 end

@@ -2,13 +2,20 @@ PODS:
   - CHTCollectionViewWaterfallLayout (0.9.5):
     - CHTCollectionViewWaterfallLayout/ObjC (= 0.9.5)
   - CHTCollectionViewWaterfallLayout/ObjC (0.9.5)
+  - DKImagePickerController (3.5.6):
+    - DKImagePickerController/Camera (= 3.5.6)
+    - DKImagePickerController/ImageManager (= 3.5.6)
+  - DKImagePickerController/Camera (3.5.6)
+  - DKImagePickerController/ImageManager (3.5.6)
 
 DEPENDENCIES:
   - CHTCollectionViewWaterfallLayout
+  - DKImagePickerController
 
 SPEC CHECKSUMS:
   CHTCollectionViewWaterfallLayout: 775ff73f48cfc13859b62d8bceb96e772e4a0318
+  DKImagePickerController: 6f4e3e8a1d1b00371bfb11c362583892a9664ee4
 
-PODFILE CHECKSUM: b5ea23f0a8bacd28037e061499bb63005d3d2729
+PODFILE CHECKSUM: 6695933a3b8319fdc8a572f1509a6ac489814dee
 
 COCOAPODS: 1.2.1

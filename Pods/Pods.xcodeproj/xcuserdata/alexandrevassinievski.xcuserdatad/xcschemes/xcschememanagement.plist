@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>DKImagePickerController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-eventsPin.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +22,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>1C8411B463CA90EE50CB60B6E475B1F6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>815FDAB4CFDDA26EF4A483CE9F8303AE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>A197C081A082042562B6F8F3B345A0A4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D29ECE69EF439D1FF5B5E9EB40FDFFE0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
